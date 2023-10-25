@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+}
+.main-container{
+    width: 209.8vh;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('images/Hero.png');
+    background-size: cover;
+}
+.page2{
+    width: 209.8vh;
+    height: 120vh;
+    overflow: hidden;
+    background-image: url('images/Bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.main-container img:nth-child(2){
+    position: absolute;
+    top: 32%;
+    left: 26%;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    padding: 1% 25% 1% 20%;
+    justify-content: space-between;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.nav ul a {
+    padding-left: 20%;
+    font-size: 15px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.1s ease-in-out;
+    font-weight: bold;
+}
+
+
+.nav ul a:hover{
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: 0.1s ease-in-out;
+    
+}
+.nav2{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 25% 1% 20%;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.nav2 ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.nav2 ul a {
+    padding-left: 20%;
+    font-size: 15px;
+    color: rgb(17, 17, 145);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.1s ease-in-out;
+    font-weight: bold;
+}
+
+
+.nav2 ul a:hover{
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: 0.1s ease-in-out;
+    
+}
+.history{
+    position: relative;
+    width: 900px;
+    height: 100px;
+    left: 20%;
+    top: 10%;
+}
+.opac{
+    margin-top: 27%;
+    background-color: rgba(100, 106, 163, 0.459) ;
+    padding: 4%;
+    justify-content: center;
+    align-items: center;
+    padding-left:30% ;
+    
+}
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    flex: 0 0 100%; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+.carousel-slide img{
+    width: 140px;
+    height: 100px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-container img {
+    flex: 0 0 calc(25% - 10px); 
+    max-width: 100%;
+}
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+    right: 20%;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: #333;
+}
+.transition{
+    transition: transform 0.3s ease-in-out;
+}
+.thirdpage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    padding: 3%;
+    padding-left: 30%;
+}
+.head p{
+    padding-top: 35px;
+    padding-left: 5%;
+}
+.mountainnav{
+    background-color: rgb(64, 73, 153) ;
+    padding-bottom: 0;
+    
+}
+.mountainnav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 12%;
+    padding-bottom: 0;
+    margin: 0;
+}
+.mountainnav ul a{
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 0;
+    color:rgb(219, 212, 212);
+    font-weight:bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-stretch:expanded;
+    font-size: x-large;
+}
+.mountainnav ul a.active {
+    background-color: rgb(88, 99, 197);
+    padding: 1%;
+}
+.mountain1{
+    width:209.8vh ;
+    height: 100vh;
+    background-image: url('images/tab1.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;    
+}
+.mountain2{
+    width:209.8vh ;
+    height: 100vh;
+    background-image: url('images/tab2.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+}
+.footer{
+    background-color: rgb(38, 49, 148);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 18%;
+    padding-right: 7%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.footer img:nth-child(2){
+    padding-top: 2%;
+    width: 240px;
+    height: 6px;
+}
+.board{
+    background-color: rgba(255, 255, 255, 0.656);
+    padding: 2%;
+    margin:10% 0% 0% 17%;
+    text-align: center;
+    width: 20%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+.board img{
+    width: 100px;
+    height: 25px;
+    padding-left: 30%;
+    padding-bottom: 12%;
+}
+@media screen and (max-width:768px) {
+    .main-container{
+        width: 109vh;
+        
+    }
+    .main-container img:nth-child(2){
+        width: 200px;
+        height: 60px;
+        top: 22%;
+        left: 33%;
+    }
+    .page2 .nav2{
+        padding-left: 0%;
+        padding-right: 6%;
+        width: 102.2vh;
+    }
+    .page2 .nav2 ul{
+        width: 48.3%;
+    }
+    .page2{
+        width: 109vh;
+    }
+    .history img{
+        width: 150px;
+        height: 80px;
+    }
+    .history{
+        top: 4%;
+        left: 2%;
+        width: 100vh;
+    }
+    .thirdpage,.mountain1,.mountain2{
+        width: 109vh;
+    }
+    .head{
+        width:102.2vh ;
+        padding: 1%;
+    }
+    .head img{
+        width: 150px;
+        height: 95px;
+    }
+    .board{
+        width: 40%;
+    }
+    
+}
+</style>
+
+<body>
+    <div class="main-container">
+        <div class="nav">
+            <img src="images/logo.png" alt="logo" width="50" height="50">
+            <ul>
+                <a href="#secondDiv"><li>01.History</li></a>
+                <a href="#thirdDiv"><li>02.Teams</li></a>
+            </ul>
+        </div>
+        <img src="images/banner.png" alt="banner" width="500" height="195">
+    </div>
+    <div class="page2" id="secondDiv">
+        <div class="nav2">
+            <img src="images/page2.png" alt="logo" width="200" height="50">
+            <ul>
+                <a href="#"><li>01.History</li></a>
+                <a href="#thirdDiv"><li>02.Teams</li></a>
+            </ul>
+        </div>
+        <div class="history"><img src="images/01history.png" alt="History">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae minima dolore placeat ipsam, accusamus quibusdam aperiam dolorum, quaerat facere beatae, libero quo neque officiis. Beatae, inventore cumque est sequi optio ad et, odio mollitia maxime illum officiis distinctio quo assumenda ducimus voluptatibus itaque natus, voluptatem dolore? Consequatur aspernatur quibusdam laborum!</p>            
+    </div>
+    <div class="opac">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide transition">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                </div>
+                <div class="carousel-slide transition">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                </div>
+                <div class="carousel-slide transition">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                    <img src="images/thumb1.png" alt="thumb1">
+                    <img src="images/thumb2.png" alt="thumb2">
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="thirdpage" id="thirdDiv">
+    <div class="head">
+        <img src="images/02climb.png" alt="02">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil ullam sit quo molestias aliquam, nam maxime vero aperiam nisi ipsum.</p>
+    </div>
+    <div class="mountainnav">
+        <ul>
+            <a href="" id="mountain1-link"><li class="active">MOUNTAIN 1</li></a>
+            <a href="" id="mountain2-link"><li>MOUNTAIN 2</li></a>
+        </ul>
+    </div>
+    <div class="mountain1" id="mountain1">
+        <div class="board">
+            <img src="images/SCHEDULE.png" alt="schedule">
+            <span>25 Nov. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <span>28 Nov. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <br>
+            <span>18 Dec. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <br>
+            <span>7 Jan. 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+        </div>
+    </div>
+    <div class="mountain2" id="mountain2" style="display: none;">
+        <div class="board">
+            <img src="images/SCHEDULE.png" alt="schedule">
+            <span>25 Nov. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <span>28 Nov. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <br>
+            <span>18 Dec. 2016&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+            <br>
+            <span>7 Jan. 2017&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vestibulum viverra</span>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="images/footerLogo.png" alt="footerlogo">
+        <img src="images/copy.png" alt="theend">
+    </div>
+</div>
+</body>
+<script>
+    let slideIndex = 0;
+showSlides(slideIndex);
+
+function showSlides(index) {
+    const slides = document.querySelectorAll(".carousel-slide");
+    const indicators = document.querySelectorAll(".indicator");
+    const carousel = document.querySelector(".carousel");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("transition");
+        slides[i].style.transform = "translateX(0%)";
+        indicators[i].classList.remove("active");
+    }
+
+    if (index < 0) {
+        slideIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+        slideIndex = 0;
+    }
+
+    slides[slideIndex].classList.add("transition");
+    slides[slideIndex].style.transform = "translateX(-100%)";
+
+    setTimeout(() => {
+        slides[slideIndex].style.transform = "translateX(0%)";
+        slides[slideIndex].classList.remove("transition");
+    }, 500);
+
+    indicators[slideIndex].classList.add("active");
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n - 1);
+}
+
+setInterval(() => {
+    slideIndex++;
+    showSlides(slideIndex);
+}, 2000);
+const link = document.querySelector('a[href = "#secondDiv"]');
+const targetDiv = document.getElementById('secondDiv');
+link.addEventListener('click',(event)=>{
+    event.preventDefault();
+    targetDiv.scrollIntoView({behavior:"smooth"});
+});
+
+const link2 = document.querySelector('a[href = "#thirdDiv"]');
+const targetDiv2 = document.getElementById('thirdDiv');
+link2.addEventListener('click',(event)=>{
+    event.preventDefault();
+    targetDiv2.scrollIntoView({behavior:"smooth"});
+});
+
+
+
+const mountain1Link = document.getElementById('mountain1-link');
+        const mountain2Link = document.getElementById('mountain2-link');
+        const mountain1Div = document.getElementById('mountain1');
+        const mountain2Div = document.getElementById('mountain2');
+
+        
+        let activeMountain = 'mountain1';
+
+        
+        function toggleMountain(mountainId, linkElement) {
+            if (activeMountain !== mountainId) {
+                
+                document.getElementById(activeMountain).style.display = 'none';
+                document.getElementById(mountainId).style.display = 'block';
+                mountain1Link.classList.remove('active');
+                mountain2Link.classList.remove('active');
+                linkElement.classList.add('active');
+                activeMountain = mountainId;
+            }
+        }
+
+        
+        mountain1Link.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleMountain('mountain1', mountain1Link);
+        });
+
+        mountain2Link.addEventListener('click', (event) => {
+            event.preventDefault();
+            toggleMountain('mountain2', mountain2Link);
+        });
+
+        
+        mountain1Div.style.display = 'block';
+        mountain1Link.classList.add('active');
+
+</script>
+</html>
